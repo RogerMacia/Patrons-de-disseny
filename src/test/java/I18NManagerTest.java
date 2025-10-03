@@ -24,27 +24,26 @@ public class I18NManagerTest {
         @Test
         public void testGetText() throws Exception {
             String msg1 = I18NManager.getInstance().getText("ca","l1");
-            Assert.assertEquals("hola", msg1);
+            Assert.assertEquals("Hola", msg1);
 
             String msg2 = I18NManager.getInstance().getText("ca","l2");
-            Assert.assertEquals("adéu", msg2);
+            Assert.assertEquals("Adéu", msg2);
 
             String msg3 = I18NManager.getInstance().getText("es","l2");
-            Assert.assertEquals("adiós", msg3);
+            Assert.assertEquals("Adiós", msg3);
 
             String msg4 = I18NManager.getInstance().getText("pt","l2");
-            Assert.assertEquals("obrigado", msg4);
-
+            Assert.assertEquals("Obrigado", msg4);
         }
 
 
     @Test(expected = MissingResourceException.class)
     public void testGetTextBundleNotFound() throws Exception {
         String msg1 = I18NManager.getInstance().getText("ca","l1");
-        Assert.assertEquals("hola", msg1);
+        Assert.assertEquals("Hola", msg1);
 
         String msg2 = I18NManager.getInstance().getText("ca","l2");
-        Assert.assertEquals("adéu", msg2);
+        Assert.assertEquals("Adéu", msg2);
 
         String msg3 = I18NManager.getInstance().getText("XXXX","l2");
     }
